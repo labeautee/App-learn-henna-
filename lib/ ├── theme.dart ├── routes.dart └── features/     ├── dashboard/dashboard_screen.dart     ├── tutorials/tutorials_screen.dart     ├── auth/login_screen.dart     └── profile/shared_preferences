@@ -1,0 +1,44 @@
+// lib/utils/shared_prefs.dart
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+class SharedPrefsService {
+  static const String keyIsLoggedIn = 'is_logged_in';
+  static const String keyFavorites = 'favorites';
+
+  // Sauvegarder l'état de connexion
+  static Future<void> setLoggedIn(bool value) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(keyIsLoggedIn, value);
+  }
+
+  // Vérifier si l'utilisateur est connecté
+  static Future<bool> isLoggedIn() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(keyIsLoggedIn) ?? false;
+  }
+
+  // Ajouter un favori (leçon ID)
+  static Future<void> addFavorite(String lessonId) async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String> favorites = prefs.getStringList(keyFavorites) ?? [];
+    if (!favorites.contains(lessonId)) {
+      favorites.add(lessonId);
+      await prefs.setStringList(keyFavorites, favorites);
+    }
+  }
+
+  // Supprimer un favori
+  static Future<void> removeFavorite(String lessonId) async {
+    final prefs = await SharedPreferences.getInstance();
+    List<String> favorites = prefs.getStringList(keyFavorites) ?? [];
+    favorites.remove(lessonId);
+    await prefs.setStringList(keyFavorites, favorites);
+  }
+
+  // Récupérer tous les favoris
+  static Future<List<String>> getFavorites() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getStringList(keyFavorites) ?? [];
+  }
+}
