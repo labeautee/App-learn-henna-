@@ -5,7 +5,11 @@ lib/
     ├── dashboard/dashboard_screen.dart
     ├── tutorials/tutorials_screen.dart
     ├── auth/login_screen.dart
-    ├──widgets youtube video dart
+    ├── widgets youtube video dart
     ├── lesson_detail_screen.dart
-    └── profile/profile_screen.dart
+│   ├── profile/
+│   │   └── profile_screen.dart
+│   └── main/
+│       └── main_screen.dart  ← si tu utilises le menu en bas (BottomNavigationBar)
 
+    └── profile/profile_screen.dart
