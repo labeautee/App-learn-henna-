@@ -1,0 +1,9 @@
+lib/
+├── theme.dart
+├── routes.dart
+└── features/
+    ├── dashboard/dashboard_screen.dart
+    ├── tutorials/tutorials_screen.dart
+    ├── auth/login_screen.dart
+    └── profile/profile_screen.dart
+  
