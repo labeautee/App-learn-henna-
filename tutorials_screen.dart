@@ -7,21 +7,21 @@ class TutorialsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tutoriels')),
+      appBar: AppBar(title: const Text('Tutoriels Henné')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: const [
           Text(
-            'Vidéo tutoriel : Motif simple',
+            '🎥 Tutoriel YouTube',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 12),
           YouTubeVideoPlayer(
-            videoUrl: 'https://www.youtube.com/watch?v=6LhCm9G7gRk',
+            videoUrl: 'https://www.youtube.com/watch?v=CbNWJiKjXRE',
           ),
           SizedBox(height: 24),
           Text(
-            'Prochaine version : liste de vidéos personnalisée 🧡',
+            'À suivre : tutoriels hors-ligne bientôt disponibles 📁',
             style: TextStyle(fontSize: 14),
           ),
         ],
