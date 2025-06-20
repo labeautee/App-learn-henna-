@@ -18,16 +18,31 @@ class HomeScreen extends StatelessWidget {
             'Bienvenue dans Learn Henna',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
+
           const SizedBox(height: 12),
+
+          // ✅ Ton image ici
+          Image.asset(
+            'assets/images/fleur_henne.png',
+            height: 200,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+
+          const SizedBox(height: 16),
+
           const Text(
             'Choisissez une catégorie pour commencer à apprendre :',
             style: TextStyle(fontSize: 16),
           ),
+
           const SizedBox(height: 20),
           _buildCategoryTile(context, 'Débutant', '/tutorials'),
           _buildCategoryTile(context, 'Intermédiaire', '/tutorials'),
           _buildCategoryTile(context, 'Avancé', '/tutorials'),
+
           const SizedBox(height: 30),
+
           ElevatedButton.icon(
             icon: const Icon(Icons.favorite),
             label: const Text("Voir mes favoris"),
